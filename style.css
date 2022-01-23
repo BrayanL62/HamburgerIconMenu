@@ -1,0 +1,57 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.icon {
+    width: 200px;
+    height: 200px;
+    background-color: salmon;
+    margin: 100px auto;
+    position: relative;
+}
+
+.icon__hamburger {
+    width: 75px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+.icon--lines {
+    width: 75px;
+    height: 8px;
+    border-radius: 5px;
+    background-color: black;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon--lines:nth-child(1){
+    top: 0px;
+}
+
+.icon--lines:nth-child(2){
+    top: 20px;
+}
+
+.icon--lines:nth-child(3){
+    top: 40px;
+}
+
+.icon__hamburger.active .icon--lines:nth-child(1) {
+    top: 20px;
+    transform: rotate(135deg);
+}
+.icon__hamburger.active .icon--lines:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+.icon__hamburger.active .icon--lines:nth-child(3) {
+    top: 20px;
+    transform: rotate(-135deg);
+}
